@@ -1,7 +1,14 @@
-/*
-	The soundex package
-*/
-package soundex
+/**
+*
+* 	Phonetic library by Robin Syihab (r [at] nosql.asia)
+*
+*	License: MIT
+*
+*	Copyright (c) 2009 The Go Authors. All rights reserved.
+*
+**/
+
+package phonetic
 
 import (
 	"strings"
@@ -26,7 +33,6 @@ func Soundex(name string, length int) string {
 			if fc == 0 {
 				fc = c
 			}
-			//fmt.Printf("c: %v, A: %v, c - 'A': %v\n",c, 'A', c - 'A')
 			d := digits[c - 'A']
 			if sndx == "" || (d != sndx[len(sndx)-1]) {
 				sndx += string(d)
